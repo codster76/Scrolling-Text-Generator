@@ -30,4 +30,30 @@ class bitMapTest
 
         newBM.Save("new.png");
     }
+
+    public void susify(Bitmap jerma, Bitmap source)
+    {
+        Bitmap newBM = new Bitmap(source.Width, source.Height);
+        int imageToUse = 0;
+        
+        for(int i = 0;i<newBM.Width;i++)
+        {
+            for(int j = 0;j<newBM.Height;j++)
+            {
+                imageToUse = i + j;
+                if(imageToUse%2 == 0)
+                {
+                    newBM.SetPixel(i,j,source.GetPixel(i,j));
+                }
+                else
+                {
+                    float jermaWidth = ((float)i/(float)source.Width) * jerma.Width;
+                    float jermaHeight = (float)j/(float)source.Height * jerma.Height;
+                    newBM.SetPixel(i,j,jerma.GetPixel((int)jermaWidth, (int)jermaHeight));
+                }
+            }
+        }
+
+        newBM.Save("susify.png");
+    }
 }

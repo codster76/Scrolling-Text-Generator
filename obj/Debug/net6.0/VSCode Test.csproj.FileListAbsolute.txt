@@ -19,3 +19,24 @@ D:\VSCode Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEv
 D:\VSCode Test\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 D:\VSCode Test\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\VSCode Test\obj\Debug\net6.0\VSCode Test.csproj.CopyComplete
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\VSCode Test.exe
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\VSCode Test.deps.json
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\VSCode Test.runtimeconfig.json
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\VSCode Test.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\ref\VSCode Test.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\VSCode Test.pdb
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.AssemblyInfoInputs.cache
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.AssemblyInfo.cs
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.csproj.CoreCompileInputs.cache
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.csproj.CopyComplete
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\ref\VSCode Test.dll
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.pdb
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.genruntimeconfig.cache
+D:\Code Repositories\Bitmap Stuff\Bitmap-Stuff\obj\Debug\net6.0\VSCode Test.csproj.AssemblyReference.cache

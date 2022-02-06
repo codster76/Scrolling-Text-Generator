@@ -7,8 +7,10 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            Bitmap jerma = new Bitmap(Directory.GetCurrentDirectory() + @"\JermaSus.jpg");
+            Bitmap sus = new Bitmap(Directory.GetCurrentDirectory() + @"\source.png");
             bitMapTest test = new bitMapTest();
-            test.changeToColour(Color.FromArgb(255,0,0,0));
+            test.susify(jerma, sus);
         }
     }
 }

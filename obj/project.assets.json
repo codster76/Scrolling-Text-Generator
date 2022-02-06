@@ -128,11 +128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VSCode Test\\VSCode Test.csproj",
+      "projectUniqueName": "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VSCode Test.csproj",
       "projectName": "VSCode Test",
-      "projectPath": "D:\\VSCode Test\\VSCode Test.csproj",
+      "projectPath": "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VSCode Test.csproj",
       "packagesPath": "C:\\Users\\r2\\.nuget\\packages\\",
-      "outputPath": "D:\\VSCode Test\\obj\\",
+      "outputPath": "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\r2\\AppData\\Roaming\\NuGet\\NuGet.Config"

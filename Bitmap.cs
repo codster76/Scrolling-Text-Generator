@@ -74,42 +74,38 @@ class bitMapTest
 
     public void createText(string text)
     {
+        // Calculate how large the full text needs to be
         Dictionary<string, string> letterReferenceList = generateReferenceList();
         string[] word = new string[text.Count()];
         string capitalisedText = text.ToUpper();
         int imageWidth = 0;
         for(int i = 0;i<text.Count();i++)
         {
-            string toAdd = "";
             if(Char.IsLetterOrDigit(capitalisedText[i]))
             {
-                word[i] = capitalisedText[i] + ".png";
-                toAdd = letterReferenceList[Char.ToString(capitalisedText[i])];
+                word[i] = Char.ToString(capitalisedText[i]);
             }
             else if(capitalisedText[i] == 32)
             {
-                word[i] = "Space.png";
-                toAdd = letterReferenceList["Space"];
+                word[i] = "Space";
             }
             else if(capitalisedText[i] == 33)
             {
-                word[i] = "!.png";
-                toAdd = letterReferenceList["!"];
+                word[i] = "!";
             }
             else if(capitalisedText[i] == 38)
             {
-                word[i] = "&.png";
-                toAdd = letterReferenceList["&"];
+                word[i] = "&";
             }
             else if(capitalisedText[i] == 58)
             {
-                word[i] = "Colon.png";
-                toAdd = letterReferenceList["Colon"];
+                word[i] = "Colon";
             }
 
             try
             {
-                imageWidth += new Bitmap(toAdd).Width;
+                //imageWidth += new Bitmap(toAdd).Width;
+                imageWidth += new Bitmap(letterReferenceList[word[i]]).Width;
             }
             catch(System.ArgumentException e)
             {
@@ -119,5 +115,32 @@ class bitMapTest
         // Each letter should be followed by a space except for the last one.
         imageWidth += text.Count() - 1;
         Console.WriteLine(imageWidth);
+
+        Bitmap fullText = new Bitmap(imageWidth, 7); // Text can only ever take up one line, so the height will always be 7
+        int currentStartingPosition = 0;
+        for(int x = 0;x<word.Count();x++)
+        {
+            Bitmap currentLetter = new Bitmap(letterReferenceList[word[x]]);
+            for(int i = 0;i<currentLetter.Width;i++) // starting value of i needs to change for each letter to specify the starting position (replace 0) and ending value needs to change based on letter width (replace fulltext.width)
+            {
+                for(int j = 0;j<currentLetter.Height;j++)
+                {
+                    fullText.SetPixel(currentStartingPosition + i, j, currentLetter.GetPixel(i, j));
+                }
+            }
+            // increment starting value by the width of the letter that was just drawn
+            currentStartingPosition += currentLetter.Width + 1;
+
+            // Add a space after each letter
+            if(x < word.Count() - 1)
+            {
+                for(int j = 0;j<currentLetter.Height;j++)
+                {
+                    fullText.SetPixel(currentStartingPosition + 1, j, Color.FromArgb(0, 0, 0, 0));
+                }
+            }
+        }
+
+        fullText.Save("Words.png");
     }
 }

@@ -10,7 +10,8 @@ namespace HelloWorld
             Bitmap jerma = new Bitmap(Directory.GetCurrentDirectory() + @"\JermaSus.jpg");
             Bitmap sus = new Bitmap(Directory.GetCurrentDirectory() + @"\source.png");
             bitMapTest test = new bitMapTest();
-            test.susify(jerma, sus);
+            //test.susify(jerma, sus);
+            test.createText("");
         }
     }
 }

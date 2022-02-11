@@ -124,9 +124,9 @@ class ScrollingTextGenerator
                     }
                 }
             }
-            else
+            else // If the position of the text passes the cutoff position or the edge of the screen, start cutting off the left pixels of the text while continuing to move
             {
-                for(int j = cutoffPos - startingXPos;j<Math.Min(i,fullText.Width);j++)
+                for(int j = cutoffPos - startingXPos;j<Math.Min(i,fullText.Width);j++) // cutoffPos - startingXPos counts up one by one
                 {
                     for(int k = 0;k<fullText.Height;k++)
                     {

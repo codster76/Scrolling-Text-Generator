@@ -105,15 +105,16 @@ class ScrollingTextGenerator
         fullText.Save("Words.png");
     }
 
-    public void createFullSequence(int startingX, int startingY, int scrollDistance, Bitmap sourceImage)
+    public void createFullSequence(int startingX, int startingY, int cutoffPos, Bitmap sourceImage)
     {
-        int totalDistance = scrollDistance + fullText.Width;
+        int distanceToMove = Math.Abs(startingX - cutoffPos);
+        int totalDistance = distanceToMove + fullText.Width;
         int startingXPos = startingX;
         for(int i = 0;i<totalDistance;i++) // Need to loop totalDistance times to create a separate image for each frame
         {
             Rectangle image = new Rectangle(0,0,sourceImage.Width,sourceImage.Height);
             Bitmap currentImage = sourceImage.Clone(image,0);
-            if(startingXPos >= Math.Abs(startingX-scrollDistance))
+            if(startingXPos >= cutoffPos)
             {
                 for(int j = 0;j<Math.Min(i,fullText.Width);j++) // The math function ensures that this doesn't try to access out of bounds pixels from the text bitmap
                 {
@@ -123,19 +124,9 @@ class ScrollingTextGenerator
                     }
                 }
             }
-            else if(startingXPos < Math.Abs(startingX-scrollDistance))
-            {
-                for(int j = Math.Abs(startingXPos);j<Math.Min(i,fullText.Width);j++)
-                {
-                    for(int k = 0;k<fullText.Height;k++)
-                    {
-                        currentImage.SetPixel(j+startingXPos,k+startingY,fullText.GetPixel(j,k));
-                    }
-                }
-            }
             else
             {
-                for(int j = Math.Abs(startingXPos);j<Math.Min(i,fullText.Width);j++) // When the text reaches the edge of the image, shorten the text instead of moving it
+                for(int j = cutoffPos - startingXPos;j<Math.Min(i,fullText.Width);j++)
                 {
                     for(int k = 0;k<fullText.Height;k++)
                     {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Sjf/SkPBJo5AnigH684CSZCjKwAtlvh+C/sxM/6bDfgAnYzFpYTsIRT9pjWuEoX63nFNiwItH3AYVGMYNFIImg==",
+  "dgSpecHash": "hFgde6hSwev5yqpE6kN8yW4qFUcXnMkcA29QZEVABZYJyCjex4gotZA9UFZlKy2ZL2ogoSDH/XxZADAF0+oryg==",
   "success": true,
-  "projectFilePath": "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VSCode Test.csproj",
+  "projectFilePath": "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VSCode Version\\VSCode Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\r2\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\r2\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"

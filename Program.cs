@@ -11,7 +11,7 @@ namespace HelloWorld
             Bitmap sus = new Bitmap(Directory.GetCurrentDirectory() + @"\source.png");
             Bitmap textBar = new Bitmap(Directory.GetCurrentDirectory() + @"\Text Bar.png");
             bitMapTest test = new bitMapTest();
-            ScrollingTextGenerator textGenerator = new ScrollingTextGenerator("Now Playing: Freeze Man");
+            ScrollingTextGenerator textGenerator = new ScrollingTextGenerator("Now Playing: Froze Man");
             //test.susify(jerma, sus);
             textGenerator.createTextImage();
             textGenerator.createFullSequence(227,4,9,textBar);

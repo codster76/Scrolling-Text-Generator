@@ -104,6 +104,7 @@ class ScrollingTextGenerator
         }
     }
 
+    // Mostly just for debug
     public void createTextImage()
     {
         fullText.Save("Words.png");

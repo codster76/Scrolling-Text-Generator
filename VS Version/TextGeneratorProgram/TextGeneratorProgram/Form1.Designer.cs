@@ -44,17 +44,19 @@ namespace TextGeneratorProgram
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.trackbar_left = new System.Windows.Forms.TrackBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.trackbar_right = new System.Windows.Forms.TrackBar();
+            this.picture_preview = new System.Windows.Forms.PictureBox();
+            this.trackbar_left = new System.Windows.Forms.TrackBar();
             this.button_generate = new System.Windows.Forms.Button();
-            this.numeric_left = new System.Windows.Forms.NumericUpDown();
             this.numeric_right = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.trackbar_left)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.numeric_left = new System.Windows.Forms.NumericUpDown();
+            this.label_generate_status = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackbar_right)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_left)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_preview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_left)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_right)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_left)).BeginInit();
             this.SuspendLayout();
             // 
             // button_background_image
@@ -174,45 +176,44 @@ namespace TextGeneratorProgram
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 280);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Left";
+            this.label7.Text = "Right";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(12, 325);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.Size = new System.Drawing.Size(25, 13);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Right";
-            // 
-            // trackbar_left
-            // 
-            this.trackbar_left.Location = new System.Drawing.Point(43, 277);
-            this.trackbar_left.Maximum = 100;
-            this.trackbar_left.Name = "trackbar_left";
-            this.trackbar_left.Size = new System.Drawing.Size(233, 45);
-            this.trackbar_left.TabIndex = 17;
-            this.trackbar_left.Value = 10;
-            this.trackbar_left.ValueChanged += new System.EventHandler(this.trackbar_left_ValueChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(362, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(426, 50);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.label8.Text = "Left";
             // 
             // trackbar_right
             // 
-            this.trackbar_right.Location = new System.Drawing.Point(43, 325);
+            this.trackbar_right.Location = new System.Drawing.Point(43, 277);
             this.trackbar_right.Maximum = 100;
             this.trackbar_right.Name = "trackbar_right";
             this.trackbar_right.Size = new System.Drawing.Size(233, 45);
-            this.trackbar_right.TabIndex = 19;
-            this.trackbar_right.Value = 10;
+            this.trackbar_right.TabIndex = 17;
+            this.trackbar_right.ValueChanged += new System.EventHandler(this.trackbar_left_ValueChanged);
+            // 
+            // picture_preview
+            // 
+            this.picture_preview.Location = new System.Drawing.Point(362, 70);
+            this.picture_preview.Name = "picture_preview";
+            this.picture_preview.Size = new System.Drawing.Size(426, 50);
+            this.picture_preview.TabIndex = 18;
+            this.picture_preview.TabStop = false;
+            // 
+            // trackbar_left
+            // 
+            this.trackbar_left.Location = new System.Drawing.Point(43, 325);
+            this.trackbar_left.Maximum = 0;
+            this.trackbar_left.Name = "trackbar_left";
+            this.trackbar_left.Size = new System.Drawing.Size(233, 45);
+            this.trackbar_left.TabIndex = 19;
+            this.trackbar_left.ValueChanged += new System.EventHandler(this.trackbar_right_ValueChanged);
             // 
             // button_generate
             // 
@@ -224,32 +225,54 @@ namespace TextGeneratorProgram
             this.button_generate.UseVisualStyleBackColor = true;
             this.button_generate.Click += new System.EventHandler(this.button_generate_Click);
             // 
-            // numeric_left
-            // 
-            this.numeric_left.Location = new System.Drawing.Point(282, 280);
-            this.numeric_left.Name = "numeric_left";
-            this.numeric_left.Size = new System.Drawing.Size(61, 20);
-            this.numeric_left.TabIndex = 22;
-            this.numeric_left.ValueChanged += new System.EventHandler(this.numeric_left_ValueChanged);
-            // 
             // numeric_right
             // 
-            this.numeric_right.Location = new System.Drawing.Point(282, 325);
+            this.numeric_right.Location = new System.Drawing.Point(282, 280);
             this.numeric_right.Name = "numeric_right";
             this.numeric_right.Size = new System.Drawing.Size(61, 20);
-            this.numeric_right.TabIndex = 23;
+            this.numeric_right.TabIndex = 22;
+            this.numeric_right.ValueChanged += new System.EventHandler(this.numeric_left_ValueChanged);
+            // 
+            // numeric_left
+            // 
+            this.numeric_left.Location = new System.Drawing.Point(282, 325);
+            this.numeric_left.Name = "numeric_left";
+            this.numeric_left.Size = new System.Drawing.Size(61, 20);
+            this.numeric_left.TabIndex = 23;
+            this.numeric_left.ValueChanged += new System.EventHandler(this.numeric_right_ValueChanged);
+            // 
+            // label_generate_status
+            // 
+            this.label_generate_status.AutoSize = true;
+            this.label_generate_status.Location = new System.Drawing.Point(634, 432);
+            this.label_generate_status.Name = "label_generate_status";
+            this.label_generate_status.Size = new System.Drawing.Size(43, 13);
+            this.label_generate_status.TabIndex = 24;
+            this.label_generate_status.Text = "Status: ";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(490, 250);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 515);
-            this.Controls.Add(this.numeric_right);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label_generate_status);
             this.Controls.Add(this.numeric_left);
+            this.Controls.Add(this.numeric_right);
             this.Controls.Add(this.button_generate);
-            this.Controls.Add(this.trackbar_right);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.trackbar_left);
+            this.Controls.Add(this.picture_preview);
+            this.Controls.Add(this.trackbar_right);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -267,11 +290,11 @@ namespace TextGeneratorProgram
             this.Controls.Add(this.button_background_image);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.trackbar_left)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackbar_right)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_left)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_preview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackbar_left)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_right)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_left)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,12 +317,14 @@ namespace TextGeneratorProgram
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TrackBar trackbar_left;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TrackBar trackbar_right;
+        private System.Windows.Forms.PictureBox picture_preview;
+        private System.Windows.Forms.TrackBar trackbar_left;
         private System.Windows.Forms.Button button_generate;
-        private System.Windows.Forms.NumericUpDown numeric_left;
         private System.Windows.Forms.NumericUpDown numeric_right;
+        private System.Windows.Forms.NumericUpDown numeric_left;
+        private System.Windows.Forms.Label label_generate_status;
+        private System.Windows.Forms.Button button1;
     }
 }
 

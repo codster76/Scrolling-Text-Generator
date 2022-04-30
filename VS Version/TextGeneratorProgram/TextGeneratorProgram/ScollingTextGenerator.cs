@@ -11,9 +11,10 @@ class ScrollingTextGenerator
     private Bitmap fullText;
     private int leftBoundary;
     private int rightBoundary;
-    private int textHeight = 9; // How high on the background image the text is drawn
+    private int textHeight = 4; // How high on the background image the text is drawn
     private Bitmap backgroundImage;
     private string saveLocation;
+    private string fontDirectory;
 
     public ScrollingTextGenerator()
     {
@@ -25,13 +26,21 @@ class ScrollingTextGenerator
         textHeight = 9;
         backgroundImage = new Bitmap(1, 1);
         saveLocation = "";
+        fontDirectory = "";
+    }
+
+    public void generateAll()
+    {
+        generateReferenceList();
+        createText();
+        createFullSequence();
     }
 
     private void generateReferenceList()
     {
         Dictionary<string, string> referenceList = new Dictionary<string, string>();
-        string[] originalList = Directory.GetFiles(Directory.GetCurrentDirectory() + @"\Font");
-        string directoryName = Directory.GetCurrentDirectory() + @"\Font\";
+        string[] originalList = Directory.GetFiles(fontDirectory);
+        string directoryName = fontDirectory + "\\";
         for (int i = 0; i < originalList.Length; i++)
         {
             string currentString = originalList[i];
@@ -42,7 +51,7 @@ class ScrollingTextGenerator
     }
 
     // Generates a bitmap of the text using the images from the font directory. The text on each frame of the sequence is copied from this.
-    public void createText()
+    private void createText()
     {
         // Calculate how large the full text needs to be
         string[] word = new string[text.Length];
@@ -146,7 +155,7 @@ class ScrollingTextGenerator
                     }
                 }
             }
-            currentImage.Save("Sequence" + i + ".png");
+            currentImage.Save(saveLocation + "\\" + "Sequence" + i + ".png");
             startingXPos--; // Negative because the text is moving right to left
         }
     }
@@ -175,5 +184,10 @@ class ScrollingTextGenerator
     public void setSaveLocation(string location)
     {
         saveLocation = location;
+    }
+
+    public void setFontDirectory(string fontDirectory)
+    {
+        this.fontDirectory = fontDirectory;
     }
 }

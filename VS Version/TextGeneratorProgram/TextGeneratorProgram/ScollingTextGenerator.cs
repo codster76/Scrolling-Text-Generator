@@ -11,7 +11,7 @@ class ScrollingTextGenerator
     private Bitmap fullText;
     private int leftBoundary;
     private int rightBoundary;
-    private int textHeight = 4; // How high on the background image the text is drawn
+    private int textHeight; // How high on the background image the text is drawn
     private Bitmap backgroundImage;
     private string saveLocation;
     private string fontDirectory;
@@ -23,7 +23,7 @@ class ScrollingTextGenerator
         fullText = new Bitmap(1, 1);
         leftBoundary = 0;
         rightBoundary = 0;
-        textHeight = 9;
+        textHeight = 4;
         backgroundImage = new Bitmap(1, 1);
         saveLocation = "";
         fontDirectory = "";
@@ -125,10 +125,9 @@ class ScrollingTextGenerator
         }
     }
 
-    // Generates every image in sequence, starting from the text completely off the edge of the bar to the text leaving the bar
     public void createFullSequence()
     {
-        int distanceToMove = Math.Abs(rightBoundary - leftBoundary); // The text will be drawn from startingX and move left towards the cutoffPos, where it'll disappear as it passes
+        int distanceToMove = Math.Abs(leftBoundary - rightBoundary); // The text will be drawn from startingX and move left towards the cutoffPos, where it'll disappear as it passes
         int totalDistance = distanceToMove + fullText.Width; // The text starts outside of the drawn area, so the length of the text needs to be taken into account
         int startingXPos = rightBoundary;
         for (int i = 0; i < totalDistance; i++) // Need to loop totalDistance times to create a separate image for each frame

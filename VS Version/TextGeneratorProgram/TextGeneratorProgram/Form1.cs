@@ -67,15 +67,15 @@ namespace TextGeneratorProgram
         private void trackbar_left_ValueChanged(object sender, EventArgs e)
         {
             numeric_right.Value = trackbar_right.Value;
-            numeric_left.Maximum = numeric_right.Value;
-            trackbar_left.Maximum = (int)numeric_right.Value;
+            //numeric_left.Maximum = numeric_right.Value;
+            //trackbar_left.Maximum = (int)numeric_right.Value;
         }
 
         private void numeric_left_ValueChanged(object sender, EventArgs e)
         {
             trackbar_right.Value = (int)numeric_right.Value;
-            numeric_left.Maximum = numeric_right.Value;
-            trackbar_left.Maximum = (int)numeric_right.Value;
+            //numeric_left.Maximum = numeric_right.Value;
+            //trackbar_left.Maximum = (int)numeric_right.Value;
         }
 
         private void trackbar_right_ValueChanged(object sender, EventArgs e)
@@ -142,8 +142,9 @@ namespace TextGeneratorProgram
             text_background_image.Text = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap - Stuff\\VS Version\\TextGeneratorProgram\\Images\\Text Bar.png";
             text_font_folder.Text = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VS Version\\TextGeneratorProgram\\Images\\Font";
             text_save_location.Text = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VS Version\\TextGeneratorProgram\\Images\\SaveLocation";
-            numeric_right.Value = 10;
-            text_input_text.Text = "aaa";
+            numeric_right.Value = 9;
+            numeric_left.Value = 227;
+            text_input_text.Text = "Now Playing: Froze Man";
         }
     }
 }

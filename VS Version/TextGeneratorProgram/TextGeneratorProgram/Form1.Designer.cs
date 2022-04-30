@@ -209,7 +209,7 @@ namespace TextGeneratorProgram
             // trackbar_left
             // 
             this.trackbar_left.Location = new System.Drawing.Point(43, 325);
-            this.trackbar_left.Maximum = 0;
+            this.trackbar_left.Maximum = 227;
             this.trackbar_left.Name = "trackbar_left";
             this.trackbar_left.Size = new System.Drawing.Size(233, 45);
             this.trackbar_left.TabIndex = 19;
@@ -236,6 +236,11 @@ namespace TextGeneratorProgram
             // numeric_left
             // 
             this.numeric_left.Location = new System.Drawing.Point(282, 325);
+            this.numeric_left.Maximum = new decimal(new int[] {
+            227,
+            0,
+            0,
+            0});
             this.numeric_left.Name = "numeric_left";
             this.numeric_left.Size = new System.Drawing.Size(61, 20);
             this.numeric_left.TabIndex = 23;

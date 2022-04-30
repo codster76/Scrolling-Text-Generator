@@ -90,7 +90,8 @@ class ScrollingTextGenerator
             }
             catch (System.ArgumentException e)
             {
-                Console.WriteLine("Invalid Character");
+                InvalidCharacterException invalidCharacterException = new InvalidCharacterException();
+                throw invalidCharacterException;
             }
         }
         // Each letter should be followed by a space except for the last one.

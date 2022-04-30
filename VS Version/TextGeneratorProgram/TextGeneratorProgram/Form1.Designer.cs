@@ -51,7 +51,6 @@ namespace TextGeneratorProgram
             this.numeric_right = new System.Windows.Forms.NumericUpDown();
             this.numeric_left = new System.Windows.Forms.NumericUpDown();
             this.label_generate_status = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackbar_right)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_preview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackbar_left)).BeginInit();
@@ -75,6 +74,7 @@ namespace TextGeneratorProgram
             this.text_background_image.Name = "text_background_image";
             this.text_background_image.Size = new System.Drawing.Size(292, 20);
             this.text_background_image.TabIndex = 1;
+            this.text_background_image.TextChanged += new System.EventHandler(this.text_background_image_TextChanged);
             // 
             // label1
             // 
@@ -255,22 +255,11 @@ namespace TextGeneratorProgram
             this.label_generate_status.TabIndex = 24;
             this.label_generate_status.Text = "Status: ";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(490, 250);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 515);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label_generate_status);
             this.Controls.Add(this.numeric_left);
             this.Controls.Add(this.numeric_right);
@@ -329,7 +318,6 @@ namespace TextGeneratorProgram
         private System.Windows.Forms.NumericUpDown numeric_right;
         private System.Windows.Forms.NumericUpDown numeric_left;
         private System.Windows.Forms.Label label_generate_status;
-        private System.Windows.Forms.Button button1;
     }
 }
 

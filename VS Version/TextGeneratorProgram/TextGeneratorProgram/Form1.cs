@@ -49,14 +49,25 @@ namespace TextGeneratorProgram
 
         private void button_generate_Click(object sender, EventArgs e)
         {
-            //Bitmap bgImage = new Bitmap(backgroundImagePath);
-            textGenerator.setBackgroundImage(new Bitmap(backgroundImagePath));
-            textGenerator.setSaveLocation(saveLocationPath);
-            textGenerator.setText(text_input_text.Text);
-            textGenerator.setFontDirectory(fontFolderPath);
-            textGenerator.setLeftBoundary((int)numeric_right.Value);
-            textGenerator.setRightBoundary((int)numeric_left.Value);
-            textGenerator.generateAll();
+            try
+            {
+                textGenerator.setBackgroundImage(new Bitmap(backgroundImagePath));
+                textGenerator.setSaveLocation(saveLocationPath);
+                textGenerator.setText(text_input_text.Text);
+                textGenerator.setFontDirectory(fontFolderPath);
+                textGenerator.setLeftBoundary((int)numeric_right.Value);
+                textGenerator.setRightBoundary((int)numeric_left.Value);
+                textGenerator.generateAll();
+                label_generate_status.Text = "Generation successful";
+            }
+            catch (ArgumentException)
+            {
+                label_generate_status.Text = "Invalid path";
+            }
+            catch (InvalidCharacterException)
+            {
+                label_generate_status.Text = "Invalid characters in text";
+            }
         }
 
         private string fixPath(string path)
@@ -81,11 +92,15 @@ namespace TextGeneratorProgram
         private void trackbar_right_ValueChanged(object sender, EventArgs e)
         {
             numeric_left.Value = trackbar_left.Value;
+            numeric_right.Maximum = numeric_left.Value;
+            trackbar_right.Maximum = (int)numeric_left.Value;
         }
 
         private void numeric_right_ValueChanged(object sender, EventArgs e)
         {
             trackbar_left.Value = (int)numeric_left.Value;
+            numeric_right.Maximum = numeric_left.Value;
+            trackbar_right.Maximum = (int)numeric_left.Value;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,8 +116,8 @@ namespace TextGeneratorProgram
                 text_background_image.Text = fileDialog.FileName;
                 Bitmap bgImage = new Bitmap(backgroundImagePath);
                 picture_preview.Image = bgImage;
-                numeric_right.Maximum = bgImage.Width; // set maximum values for boundaries
-                trackbar_right.Maximum = bgImage.Width;
+                numeric_left.Maximum = bgImage.Width; // set maximum values for boundaries
+                trackbar_left.Maximum = bgImage.Width;
             }
         }
 
@@ -134,17 +149,9 @@ namespace TextGeneratorProgram
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void text_background_image_TextChanged(object sender, EventArgs e)
         {
-            backgroundImagePath = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VS Version\\TextGeneratorProgram\\Images\\Text Bar.png";
-            fontFolderPath = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VS Version\\TextGeneratorProgram\\Images\\Font";
-            saveLocationPath = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VS Version\\TextGeneratorProgram\\Images\\SaveLocation";
-            text_background_image.Text = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap - Stuff\\VS Version\\TextGeneratorProgram\\Images\\Text Bar.png";
-            text_font_folder.Text = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VS Version\\TextGeneratorProgram\\Images\\Font";
-            text_save_location.Text = "D:\\Code Repositories\\Bitmap Stuff\\Bitmap-Stuff\\VS Version\\TextGeneratorProgram\\Images\\SaveLocation";
-            numeric_right.Value = 9;
-            numeric_left.Value = 227;
-            text_input_text.Text = "Now Playing: Froze Man";
+            backgroundImagePath = text_background_image.Text;
         }
     }
 }
